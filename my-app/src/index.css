@@ -6,6 +6,8 @@
   background-color: rgb(28, 28, 28);
 }
 
+/* Custom Arrow Animation */
+
 .bouncing {
   animation: bouncing 2s infinite;
 }
@@ -13,4 +15,59 @@
 @keyframes bouncing {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(10px); }
+}
+
+/* Custom Shadow & Scale Effect */
+
+.smooth-transform {
+  transition: transform 500ms ease;
+  transition: filter 200ms ease;
+}
+
+.smooth-transform:hover {
+  box-shadow: 200px rgb(207, 207, 22); 
+  transform: scale(1.06); 
+  filter: drop-shadow(0 0 8px rgb(207, 207, 22))
+}
+
+/* Custom Links Underline Effect */
+
+.link__hover--effect {
+    position: relative;
+}
+
+.link__hover--effect:hover::after {
+    left: 0;
+    width: 100%;
+}
+
+.link__hover--effect::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    height: 6px;
+    right: 0;
+    width: 0;
+    background-color: rgb(207, 207, 22);
+    transition: all 100ms ease-in-out;
+}
+
+/* Custom Button Effects */
+
+.yellow-button {
+  background-color: rgb(207, 207, 22);
+}
+
+.button-transform {
+  transition: transform 200ms ease;
+}
+
+.button-transform:hover {
+  transform: scale(1.02);
+  background-color: rgb(255, 255, 0);
+}
+
+.button-transform:active {
+  transform: scale(0.70);
+  background-color: rgb(221, 221, 21);
 }

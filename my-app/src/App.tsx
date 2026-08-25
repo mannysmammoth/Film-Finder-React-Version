@@ -1,13 +1,13 @@
-import './App.css'
-import Home from './components/mainHome';
-import Nav from './components/nav';
+import './App.css';
+import Landing from './pages/landing';
+import SearchPage from './pages/searchPage';
 
 function App() {
 
   return (
-    <main className='my-0 mx-auto'>
-      <Nav />
-      <Home />
+    <main>
+      <Landing />
+      <SearchPage />
     </main>
   )
 }
