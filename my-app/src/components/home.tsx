@@ -32,7 +32,9 @@ function Home() {
               border-6 
               p-4 
               rounded-3xl 
-              smooth-transform'><FaClapperboard />
+              smooth-transform
+              cursor-pointer'>
+                <FaClapperboard />
             </button>
           </Link>
         </div>
