@@ -4,7 +4,7 @@ import Footer from "../components/footer";
 
 function Landing() {
   return (
-    <section className="min-h-screen flex flex-col">
+    <section className="min-h-screen h-full flex flex-col">
       <Nav />
       <Home />
       <Footer />    

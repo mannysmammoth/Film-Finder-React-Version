@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 
 function Home() {
   return (
-    <section>
+    <section className='m-auto'>
+      <div className=''>
       <div className='flex flex-col text-center max-w-255 mx-auto space-y-8'>
         <p className='text-3xl text-white'>Welcome to <span className='text-yellow-300 link__hover--effect'>Film Finder</span> a simple and straightforward way to find information a movie and or tv series you are looking for.</p>
         <p className='text-4xl text-white'>Give it a try!</p>  
@@ -38,6 +39,7 @@ function Home() {
             </button>
           </Link>
         </div>
+      </div>
       </div>      
     </section>
   );    

@@ -1,7 +1,6 @@
-
-
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import Footer from "../components/footer";
 
 type Movie = {
   imdbID: string;
@@ -51,7 +50,7 @@ function Selected() {
 
   return (
     <section className='m-auto p-10'>
-      <Link to="/search" className="text-yellow-300 text-3xl link__hover--effect">Back to search</Link>
+      <Link to="/search" className="text-yellow-300 text-3xl link__hover--effect">Back to search page</Link>
       <div className="mt-10 selected-border glow">
         <svg className="glow-container" aria-hidden="true">
           <rect pathLength="100" className="glow-blur" />
@@ -63,13 +62,19 @@ function Selected() {
             <h1 className='text-6xl font-bold text-white text-center'>{movie.Title}</h1>
             <p className="text-2xl mt-4 text-white text-center">{movie.Year} | {movie.Runtime} | {movie.Genre}</p>
             <p className="text-xl mt-6 text-white">{movie.Plot}</p>
-            <p className="text-xl mt-6 text-white"><strong>Director:</strong> {movie.Director}</p>
-            <p className="text-xl text-white"><strong>Cast:</strong> {movie.Actors}</p>
-            <p className="text-xl text-white"><strong>Rated:</strong> {movie.Rated}</p>
-            <p className="text-xl text-white"><strong>IMDb:</strong> {movie.imdbRating}</p>
+            <p className="text-xl mt-6 text-white"><strong className='text-yellow-300'>Director:</strong> {movie.Director}</p>
+            <p className="text-xl text-white"><strong className='text-yellow-300'>Cast:</strong> {movie.Actors}</p>
+            <p className="text-xl text-white"><strong className='text-yellow-300'>Rated:</strong> {movie.Rated}</p>
+            <p className="text-xl text-white"><strong className='text-yellow-300'>IMDb:</strong> {movie.imdbRating}</p>
+            <p className='text-xl text-white'><strong className='text-yellow-300'>Rewards:</strong> {movie.Awards}</p>
+            <p className='text-xl text-white'><strong className='text-yellow-300'>Ratings:</strong><span className='flex flex-col ml-6 text-white'>{movie.Ratings.map((rating) => <span key={rating.Source}>{rating.Source}: {rating.Value}{" "}</span>)}</span></p>
+            <p className='text-xl text-white'><strong className='text-yellow-300'>Boxoffice:</strong><span> {movie.BoxOffice}</span></p>
           </div>
         </div>
       </div>
+      <footer>
+        <Footer />
+      </footer>
     </section>
   );
 };

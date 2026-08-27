@@ -70,7 +70,7 @@ function SearchPage() {
           value={searchQuery} 
           onChange={(event) => setSearchQuery(event.target.value)} 
           type="text" 
-          placeholder="Search for a movie/show..." 
+          placeholder="Search for a movie or show..." 
           className='
             text-3xl 
             text-gray-300 
@@ -110,7 +110,7 @@ function SearchPage() {
         <h2 className='text-white text-5xl font-bold mt-30'>Results:</h2>
         {isLoading ? 
             <section className='w-full'>
-              <div className='text-center p-50'>
+              <div className='text-center py-30'>
                 <span className='text-yellow-300 text-9xl arrow-rotate'>
                   <FaGear />
                 </span>
