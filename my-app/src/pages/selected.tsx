@@ -45,7 +45,7 @@ function Selected() {
     }
 
     void loadMovie();
-  }, [imdbID]);
+  }, [apiKey, apiUrl, imdbID]);
 
   if (isLoading) return <p className="text-white text-center text-5xl mt-40">Loading...</p>;
   if (!movie) return <p className="text-white text-center text-4xl mt-40">Movie not found.</p>;
