@@ -14,7 +14,9 @@ type Movie = {
 };
 
 async function fetchMovieData(searchTerm: string): Promise<Movie[]> {
-    const response = await fetch(`https://www.omdbapi.com/?apikey=8e59a55&s=${encodeURIComponent(searchTerm)}`);
+  const apiUrl = import.meta.env.VITE_OMDB_API_URL;
+  const apiKey = import.meta.env.VITE_OMDB_API_KEY;
+  const response = await fetch(`${apiUrl}?apikey=${apiKey}&s=${encodeURIComponent(searchTerm)}`);
     const movieData = await response.json();
     if (!movieData || movieData.Response === "False") return [];
     return movieData.Search;
@@ -63,7 +65,7 @@ function SearchPage() {
         <Nav />
       </div>
       <div className='text-center'>
-        <h2 className='text-white text-4xl font-bold mt-25'>Take a Look<span className='absolute ml-1'><FaMagnifyingGlass /></span></h2>    
+        <h2 className='text-white text-4xl font-bold mt-25 take-look'>Take a Look<span className='absolute ml-1'><FaMagnifyingGlass /></span></h2>    
       </div>
       <form className='flex justify-center mt-7' onSubmit={(event) => { event.preventDefault(); void performSearch(); }}>
         <input id="searchQuery" 
@@ -78,7 +80,8 @@ function SearchPage() {
             border-yellow-300 
             rounded-xl 
             p-1 
-            min-w-120'>
+            min-w-120
+            search-bar'>
         </input>
         <button
           type="submit"
@@ -94,10 +97,10 @@ function SearchPage() {
           scale-100 
           hover:scale-110
           cursor-pointer
-            '>{isLoading ? "Searching..." : "Search"}</button>
+          search-button'>{isLoading ? "Searching..." : "Search"}</button>
           </form>
       <div className='m-10'>
-        <h2 className='text-white text-5xl font-bold mt-30'>Sort by:</h2>
+        <h2 className='text-white text-5xl font-bold mt-30 sort-by'>Sort by:</h2>
         <select className='text-yellow-300 min-w-50 mt-4' id = 'sortOptions' defaultValue="" onChange = {(event) => sortResults(event.target.value)}>
           <option value="" disabled>Sort</option>
           <option value="movie">Movie</option>
@@ -107,7 +110,7 @@ function SearchPage() {
         </select>
       </div>
       <div className='m-10'>
-        <h2 className='text-white text-5xl font-bold mt-30'>Results:</h2>
+        <h2 className='text-white text-5xl font-bold mt-30 results'>Results:</h2>
         {isLoading ? 
             <section className='w-full'>
               <div className='text-center py-30'>
@@ -120,16 +123,16 @@ function SearchPage() {
               </div>
             </section> : !isLoading}
             {!isLoading && hasSearched && results.length === 0 && <p className="w-full text-center mt-40 text-4xl font-bold text-white">No results found.</p>}
-        <div className="results__container flex justify-between flex-wrap gap-10 p-20">
+        <div className="results__container flex justify-between flex-wrap gap-10 p-20 results-container ">
           {results.map((movie) => (
             <Link to={`/selected/${movie.imdbID}`} key={`${movie.imdbID}-${movie.Title}`}>
-              <div className="border-4 border-yellow-300 rounded-xl shadow-2xl shadow-amber-100 result-effect cursor-pointer">
+              <div className="border-4 border-yellow-300 rounded-xl shadow-2xl shadow-amber-100 result-effect cursor-pointer figure-container">
                 <figure>
-                  <img className="w-75" src={movie.Poster !== "N/A" ? movie.Poster : "https://via.placeholder.com/200x300?text=No+Poster"} alt={`${movie.Title} poster`} />
+                  <img className="w-75 rounded-" src={movie.Poster !== "N/A" ? movie.Poster : "https://via.placeholder.com/200x300?text=No+Poster"} alt={`${movie.Title} poster`} />
                 </figure>
-                <figcaption className="w-75 px-2 text-white text-center text-3xl ">{movie.Title}</figcaption>
-                <p className="text-white text-center text-xl">Year: {movie.Year}</p>
-                <p className="text-white text-center text-xl">Type: {movie.Type}</p>
+                <h3 className="w-75 px-2 text-white text-center text-3xl figure-title">{movie.Title}</h3>
+                <p className="text-white text-center text-xl figure-para">Year: {movie.Year}</p>
+                <p className="text-white text-center text-xl figure-para">Type: {movie.Type}</p>
               </div>
             </Link>
           ))}

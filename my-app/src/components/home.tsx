@@ -5,9 +5,9 @@ function Home() {
   return (
     <section className='m-auto'>
       <div className=''>
-      <div className='flex flex-col text-center max-w-255 mx-auto space-y-8'>
-        <p className='text-3xl text-white'>Welcome to <span className='text-yellow-300 link__hover--effect'>Film Finder</span> a simple and straightforward way to find information a movie and or tv series you are looking for.</p>
-        <p className='text-4xl text-white'>Give it a try!</p>  
+      <div className='flex flex-col text-center max-w-255 mx-auto space-y-8 px-6'>
+        <p className='text-3xl text-white p-querie'>Welcome to <span className='text-yellow-300 link__hover--effect p-querie'>Film Finder</span> a simple and straightforward way to find information a movie and or tv series you are looking for.</p>
+        <p className='text-4xl text-white p-querie'>Give it a try!</p>  
       </div>
       <div>
         <div className='

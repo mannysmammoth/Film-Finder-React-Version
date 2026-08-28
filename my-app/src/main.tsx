@@ -5,14 +5,12 @@ import App from './App.tsx';
 import { createBrowserRouter, RouterProvider, } from 'react-router-dom';
 import NotFoundPage from './components/notFoundPage.tsx';
 import SearchPage from './pages/searchPage.tsx';
-import Loading from './components/loadingState.tsx';
 import Selected from './pages/selected.tsx';
 
 const router = createBrowserRouter([
   {path:"/", element: <App />},
   {path:"*", element: <NotFoundPage />},
   {path:"/search", element: <SearchPage />},
-  {path:"/loading", element: <Loading />},
   {path:"/selected/:imdbID", element: <Selected />},
 ]);
 

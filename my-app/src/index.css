@@ -183,3 +183,160 @@
     stroke-dashoffset: calc(var(--glow-start-offset) - 20);
   }
 }
+
+/* Responsive Sizing */
+
+@media (max-width: 1355px) {
+  .poster {
+    margin-bottom: 28px;
+  }
+
+  .selected-box {
+    padding: 30px;
+  }
+}
+
+/*@media (max-width: 1243px) {
+  .results-container {
+    padding: 200px; 
+  }
+}*/
+
+@media (max-width: 1100px) {
+
+/* Nav */
+  .title {
+    font-size: 80px;
+  }
+
+  .search-querie {
+    font-size: 25px;
+  }
+
+  .home-querie {
+    font-size: 25px;
+  }
+
+  /* Home */
+  .p-querie {
+    font-size: 25px;
+  }
+
+  /* Search Page */
+  .take-look {
+    font-size: 30px;
+  }
+
+  .search-bar {
+    min-width: 35vw;
+    font-size: 25px;
+  }
+
+  .search-button {
+    font-size: 24px;
+  }
+
+  .sort-by {
+    font-size: 38px;
+  }
+
+  .results {
+    font-size: 38px;
+  }
+
+  #sortOptions {
+    min-width: 16vw;
+  }
+
+  /* Selected */ 
+  .search-return {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 895px) {
+  .results-container {
+    padding-top: 80px;
+    padding-right: 50px;
+    
+  }
+}
+
+@media (max-width: 865px) {
+  .results-container {
+    padding-right: 40px;
+  }
+}
+
+@media (max-width: 855px) {
+  .results-container {
+    padding-right: 10px;
+  }
+}
+
+@media (max-width: 825px) {
+  .results-container {
+    padding-right: 5px;
+  }
+  .figure-container {
+    width: 250px;
+  }
+  .figure-title {
+    font-size: 20px;
+    width: 100%;
+  }
+  .figure-para {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 820px) {
+  .results-container {
+    padding-right: 0px;
+  }
+}
+
+@media (max-width: 815px) {
+  .results-container {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 665px) {
+  .title {
+    font-size: 60px;
+  }
+
+  .search-bar {
+    max-width: 30vw;
+    font-size: 18px;
+  }
+
+  .search-button {
+    font-size: 18px;
+  }
+
+  .take-look {
+    font-size: 26px;
+  }
+
+  .sort-by {
+    font-size: 28px;
+  }
+
+  .results {
+    font-size: 28px;
+  }
+
+  .footer {
+    font-size: 12px;
+  }
+
+  .home-querie {
+    font-size: 17px;
+  }
+
+  .search-querie {
+    font-size: 17px;
+  }
+}
